@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { postRegister } = require('../controllers/index');
 
 // how the flow of the webpage will go
 /* GET home page */
@@ -13,9 +14,7 @@ router.get('/register', (req, res, next) => {
 });
 
 /* POST /register */
-router.post('/register', (req, res, next) => {
-  res.send('POST /register');
-});
+router.post('/register', postRegister);
 
 /* GET /login */
 router.get('/login', (req, res, next) => {
@@ -52,7 +51,7 @@ router.get('/reset/:token', (req, res, next) => {
   res.send('GET /reset/:token');
 });
 
-/* GET /reset */
+/* GET /reset/:token */
 router.put('/reset/:token', (req, res, next) => {
   res.send('PUT /reset/:token');
 });
