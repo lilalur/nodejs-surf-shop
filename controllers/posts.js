@@ -9,5 +9,11 @@ module.exports = {
     // Post New
     newPost(req, res, next) {
         res.render('posts/new');
+    },
+    // Post Create
+    async createPost(req, res, next) {
+        // use req.body to create a new posts
+        let post = await Post.create(req.body);
+        res.redirect(`/posts/${post.id}`);
     }
 }
