@@ -1,3 +1,5 @@
+require('dotenv').config(); //make access to the .env file to store global informations 
+
 const createError   = require('http-errors');
 const express       = require('express');
 const path          = require('path');
